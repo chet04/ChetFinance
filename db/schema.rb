@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150929224647) do
 
   create_table "financial_accounts", force: :cascade do |t|
     t.string   "name"
-    t.string   "class"
+    t.string   "klass"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,15 @@
+<h1>Add a Financial Account</h1>
+<div class="container">
+  <%= form_for @financial_account, html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.label :klass %>
+      <%= f.select :klass, ['Bank Account', 'Credit Card', 'Cash on Hand'], class: "form-control" %>
+    <div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control"%>
+    </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
