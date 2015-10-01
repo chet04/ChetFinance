@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def index
-
+    @transactions = Transaction.order(:account)
   end
 
   def new
@@ -14,11 +14,11 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = current_user.transactions.build safe_create_params
+    @transaction = Transaction.new safe_create_params
 
     if @transaction.save
       flash[:notice] = "Transaction Created Successfully"
-      redirect_to transaction_path(@transaction)
+      redirect_to transactions_path
     else
       flash.now[:alert] = @transaction.errors.first
       render 'new'

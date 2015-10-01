@@ -1,1 +1,10 @@
-<h1>Welcome to Chet Finance</h1>
+<% if user_signed_in? %>
+<h1><center>$$ Lets Be Money Smart $$</center></h1>
+<h4><center><%= link_to "Financial Accounts", financial_accounts_path %></center></h4>
+<h4><center><%= link_to "Transactions", transactions_path %></center></h4>
+<!-- Eventually add charts but for now add pictures -->
+<% else %>
+<h1><center>$$ Welcome to Chet Finance $$</center></h1>
+<h4><center>Please <%= link_to "Sign up", new_user_registration_path %> to Start Making More Informed Financial Decisions</center></h4>
+<% end %>
+

@@ -6,7 +6,7 @@ class FinancialAccountsController < ApplicationController
   end
 
   def index
-
+    @financial_accounts = FinancialAccount.order(:name)
   end
 
   def new
@@ -18,7 +18,7 @@ class FinancialAccountsController < ApplicationController
 
     if @financial_account.save
       flash[:notice] = "Financial Account Created Successfully"
-      redirect_to financial_account_path(@financial_account)
+      redirect_to financial_accounts_path
     else
       flash.now[:alert] = @financial_account.errors.first
       render 'new'

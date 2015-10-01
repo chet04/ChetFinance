@@ -1,0 +1,6 @@
+<h1>Financial Accounts</h1>
+<section>
+  <% @financial_accounts.each do |financial_account| %>
+    <h3><%= link_to financial_account.name, financial_account %></h3>
+  <% end %>
+</section>
