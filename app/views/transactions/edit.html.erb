@@ -1,0 +1,31 @@
+<h1><center>Edit <%= @transaction.account %></center></h1>
+<div class="container">
+  <%= form_for @transaction, html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.label :revenue_or_expense_or_balancesheet, 'Revenue, Expense or Balance Sheet' %>
+      <%= f.select :revenue_or_expense_or_balancesheet, ['Revenue', 'Expense', 'Balance Sheet'], class: "form-control" %>
+    <div>
+    <div class="form-group">
+      <%= f.label :financial_account_id, 'Financial Account' %>
+      <%= f.collection_select :financial_account_id, FinancialAccount.all,:id,:name %>
+    <div>
+    <div class="form-group">
+      <%= f.label :amount %>
+      <%= f.number_field :amount, :step => 0.01, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_field :date, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :account %>
+      <%= f.text_field :account, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :general_ledger %>
+      <%= f.text_field :general_ledger, class: "form-control" %>
+    </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

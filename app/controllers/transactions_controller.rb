@@ -5,6 +5,18 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
+  def update
+    @transaction = Transaction.find(params[:id])
+
+    if @transaction.update(safe_create_params)
+      flash[:notice] = "Transaction Updated Successfully"
+      redirect_to transactions_path
+    else
+      flash.now[:alert] = @transaction.errors.first
+      render 'edit'
+    end
+  end
+
   def index
     @transactions = Transaction.order(:account)
   end

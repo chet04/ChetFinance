@@ -5,6 +5,18 @@ class FinancialAccountsController < ApplicationController
     @financial_account = FinancialAccount.find(params[:id])
   end
 
+  def update
+    @financial_account = FinancialAccount.find(params[:id])
+
+    if @financial_account.update(safe_create_params)
+      flash[:notice] = "Financial Account Updated Successfully"
+      redirect_to financial_accounts_path
+    else
+      flash.now[:alert] = @financial_account.errors.first
+      render 'edit'
+    end
+  end
+
   def index
     @financial_accounts = FinancialAccount.order(:name)
   end

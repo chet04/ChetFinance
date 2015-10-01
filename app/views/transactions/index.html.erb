@@ -1,6 +1,6 @@
 <h1><center>Transactions</center></h1>
 <section>
   <% @transactions.each do |transaction| %>
-    <h4><center><%= link_to transaction.account, transaction %></center></h4>
+    <h4><center><%= link_to transaction.account, edit_transaction_path(transaction.id) %></center></h4>
   <% end %>
 </section>

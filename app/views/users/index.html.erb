@@ -1,8 +1,14 @@
 <% if user_signed_in? %>
 <h1><center>$$ Lets Be Money Smart $$</center></h1>
-<h4><center><%= link_to "Financial Accounts", financial_accounts_path %></center></h4>
-<h4><center><%= link_to "Transactions", transactions_path %></center></h4>
 <!-- Eventually add charts but for now add pictures -->
+<center><img src="http://2.bp.blogspot.com/-aFCCbaYlXWk/UcwPftpgvJI/AAAAAAAAGa8/XWODYy0QGZM/s400/budget_bar_chart.png" alt="Net Worth" style="width:721px;height:408.277108px;"></center>
+
+<center><img src="http://www.openlearningworld.com/Personal_Finance/userfiles/image/3%20Monthly%20INcome%20Statement(1).jpg" alt="Income Statement" style="width:721px;height:630.875px;"></center>
+
+<center><img src="http://www.smartbutclueless.com/wp-content/uploads/2013/07/net-worth-life-span-right-size.jpg" alt="Net Worth" style="width:721px;height:499px;"></center>
+
+<center><img src="http://www.openlearningworld.com/Personal_Finance/userfiles/image/3%20-%20New%20Balance%20Sheet%20Chart%205.jpg" alt="Balance Sheet" style="width:721px;height:576px;"></center>
+
 <% else %>
 <h1><center>$$ Welcome to Chet Finance $$</center></h1>
 <h4><center>Please <%= link_to "Sign up", new_user_registration_path %> to Start Making More Informed Financial Decisions</center></h4>

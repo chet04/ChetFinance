@@ -1,6 +1,6 @@
 <h1><center>Financial Accounts</h1></center>
 <section>
-  <% @financial_accounts.each do |account| %>
-    <h4><center><%= link_to account.name, account %></center></h4>
+  <% @financial_accounts.each do |fa| %>
+    <h4><center><%= link_to fa.name, edit_financial_account_path(fa.id) %></center></h4>
   <% end %>
 </section>
