@@ -2,7 +2,7 @@ class FinancialAccountsController < ApplicationController
   before_action :authenticate_user!
 
   def edit
-
+    @financial_account = FinancialAccount.find(params[:id])
   end
 
   def index

@@ -1,4 +1,4 @@
-<h1>Add a Transaction</h1>
+<h1><center>Add a Transaction</center></h1>
 <div class="container">
   <%= form_for @transaction, html: { multipart: true } do |f| %>
     <div class="form-group">
@@ -24,7 +24,7 @@
     <div class="form-group">
       <%= f.label :general_ledger %>
       <%= f.text_field :general_ledger, class: "form-control" %>
-    <div>
+    </div>
       <%= f.submit 'Submit', class: 'btn btn-primary' %>
     </div>
   <% end %>

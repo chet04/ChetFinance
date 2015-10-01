@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def edit
-
+    @transaction = Transaction.find(params[:id])
   end
 
   def index
